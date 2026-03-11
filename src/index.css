@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0b132b;
+  --panel: rgba(255,255,255,0.06);
+  --neon-cyan: #00e5ff;
+  --neon-blue: #4dd0e1;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+.glass {
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+}
+
+.neon-ring {
+  box-shadow: 0 0 0 2px rgba(77,208,225,0.2), inset 0 0 25px rgba(0,229,255,0.25);
+}
+
+.btn-neon {
+  transition: all 180ms ease;
+  box-shadow: 0 0 12px rgba(0,229,255,0.45);
+}
+.btn-neon:hover {
+  box-shadow: 0 0 18px rgba(0,229,255,0.75);
+  transform: translateY(-1px);
+}
+.btn-neon:active {
+  transform: translateY(0);
+  box-shadow: 0 0 24px rgba(0,229,255,0.95);
+}
+
+.ring-gradient {
+  background: radial-gradient(closest-side, rgba(0,229,255,0.12), transparent 65%);
+}
+
+.dpad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 72px);
+  grid-template-rows: repeat(3, 72px);
+  gap: 12px;
+}
+
+.control-button {
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(0,229,255,0.35);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-button:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+.control-button:active {
+  background: rgba(255,255,255,0.18);
+}
+
+@media (max-width: 420px) {
+  .dpad-grid {
+    grid-template-columns: repeat(3, 56px);
+    grid-template-rows: repeat(3, 56px);
+    gap: 10px;
+  }
+  .control-button {
+    border-radius: 14px;
+  }
+}
